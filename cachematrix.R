@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
     # makeCacheMatrix - a function to cache a matrix and the result of an
     # operation on the matrix.  Any operation can be cached.
     # Based on makeVector: https://github.com/rdpeng/ProgrammingAssignment2, Roger D. Peng
-    m <- NULL
+    o <- NULL
     set <- function(y) {
             x <<- y
             o <<- NULL
@@ -27,8 +27,15 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-
 cacheSolve <- function(x, ...) {
     # cacheSolve returns a matrix that is the inverse of 'x' and cache's
     # that value for later retrieval.
+    output <- x$getoutput()
+    if (is.null(output)) {
+        output <- solve(x$get(), ...)
+        x$setoutput(output)
+    } else {
+        message("getting cached data")
+    }
+    return(output)
 }
