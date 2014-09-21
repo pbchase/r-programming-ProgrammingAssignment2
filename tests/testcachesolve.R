@@ -1,4 +1,5 @@
 # test functions of cachematrix.R
+message("test functions of cachematrix.R")
 
 # prepare for tests
 x <- matrix(rnorm(16), 4, 4)

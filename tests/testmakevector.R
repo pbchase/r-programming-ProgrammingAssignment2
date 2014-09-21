@@ -1,4 +1,6 @@
 # test functions of makevector.R
+message("")
+message("test functions of makevector.R")
 
 # prepare for tests
 x <- seq(1,10,1)
